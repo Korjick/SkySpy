@@ -3,7 +3,12 @@ guid: ab6e2ec7a765ce1459c4089e4f364e97
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PolygonCity_Glass_Windows
+    second: {fileID: 2100000, guid: 9b55e452d80039c4daa80bb0bab6d42f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

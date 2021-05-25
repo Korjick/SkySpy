@@ -3,7 +3,12 @@ guid: 0f3148b9a7ef85e41a5fca86667815f1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PolygonCity_Skyline
+    second: {fileID: 2100000, guid: 5779ac5f63efd1e4db1ea1b27df1888a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

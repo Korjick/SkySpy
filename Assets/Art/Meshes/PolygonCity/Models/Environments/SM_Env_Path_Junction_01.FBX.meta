@@ -3,7 +3,12 @@ guid: 0d946af430568904e8f0e13d3e640336
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PolygonCity_Texture_01_A
+    second: {fileID: 2100000, guid: 6bed1e9d789bee341b17e44aa89236b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

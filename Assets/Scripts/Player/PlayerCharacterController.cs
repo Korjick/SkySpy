@@ -79,6 +79,7 @@ public class PlayerCharacterController : MonoBehaviour
     private float _lastTimeJumped;
     private float _cameraVerticalAngle;
     private float _targetCharacterHeight;
+    private bool _jumpOnAir;
 
     private const float JumpGroundingPreventionTime = 0.2f;
     private const float KGroundCheckDistanceInAir = 0.07f;
@@ -182,6 +183,7 @@ public class PlayerCharacterController : MonoBehaviour
             {
                 if (IsGrounded)
                 {
+                    _jumpOnAir = true;
                     Vector3 targetVelocity = worldSpaceMoveInput * maxSpeedOnGround * speedModifier;
                     if (IsCrouching)
                         targetVelocity *= maxSpeedCrouchedRatio;
@@ -220,11 +222,12 @@ public class PlayerCharacterController : MonoBehaviour
             // По воздуху
             else
             {
-                if (_inputHandler.GetJumpInputDown())
+                if (_inputHandler.GetJumpInputDown() && _jumpOnAir)
                 {
                     CharacterVelocity = new Vector3(CharacterVelocity.x, 0f, CharacterVelocity.z);
                     CharacterVelocity += Vector3.up * jumpForce;
                     _lastTimeJumped = Time.time;
+                    _jumpOnAir = false;
                 }
                 
                 if (_wallRunComponent == null || (_wallRunComponent != null && !_wallRunComponent.IsWallRunning()))
