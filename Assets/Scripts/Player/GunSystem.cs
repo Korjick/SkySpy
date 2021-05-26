@@ -25,7 +25,7 @@ namespace Assets.Scripts.Player
 
         public GameObject bulletHoleGraphic;
         public GameObject[] muzzleFlash;
-        public Text text;
+        public Text text, pressText;
 
         private void Awake()
         {
@@ -45,6 +45,16 @@ namespace Assets.Scripts.Player
         {
             _shooting = allowButtonHold ? playerInputHandler.GetFireInputHold() : playerInputHandler.GetFireInputDown();
 
+            if (_bulletsLeft <= 0)
+            {
+                foreach (var flash in muzzleFlash)
+                {
+                    flash.SetActive(false);
+                }
+                _particleActivated = false;
+                if(pressText) pressText.gameObject.SetActive(true);
+            }
+            
             if (!_shooting)
             {
                 foreach (var flash in muzzleFlash)
@@ -123,6 +133,7 @@ namespace Assets.Scripts.Player
 
         private void Reload()
         {
+            if (pressText) pressText.text = "Reloading...";
             _reloading = true;
             Invoke("ReloadFinished", reloadTime);
         }
@@ -131,6 +142,11 @@ namespace Assets.Scripts.Player
         {
             _bulletsLeft = magazineSize;
             _reloading = false;
+            if (pressText)
+            {
+                pressText.gameObject.SetActive(false);
+                pressText.text = "Press R to reload";
+            }
         }
 
         private IEnumerator DestroyBulletHole()
