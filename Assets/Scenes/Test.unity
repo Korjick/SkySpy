@@ -789,10 +789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1673162693, guid: 633558d1fb971c147b7e058ddd9d0780, type: 3}
-      propertyPath: bulletHoleGraphic
-      value: 
-      objectReference: {fileID: 2924751962164543553, guid: 5b446d0071ae34d48ab25f24c39a0dfe, type: 3}
     - target: {fileID: 492151924060562965, guid: 633558d1fb971c147b7e058ddd9d0780, type: 3}
       propertyPath: m_RootOrder
       value: 1
