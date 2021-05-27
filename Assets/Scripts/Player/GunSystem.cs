@@ -28,13 +28,14 @@ namespace Assets.Scripts.Player
         public GameObject[] muzzleFlash;
         public Text text, pressText;
 
-        public int BulletsLEft => _bulletsLeft;
-        
+        public int BulletsLeft => _bulletsLeft;
+
         private void Awake()
         {
             _bulletsLeft = magazineSize;
             _readyToShoot = true;
             _bulletHoles = new Queue<GameObject>();
+            _bulletsShot = bulletsPerTap;
         }
 
         private void Update()
@@ -67,22 +68,22 @@ namespace Assets.Scripts.Player
         {
             _shooting = allowButtonHold ? playerInputHandler.GetFireInputHold() : playerInputHandler.GetFireInputDown();
 
-            if (playerInputHandler.GetReloadInputDown() && _bulletsLeft < magazineSize && !_reloading)
+            if (playerInputHandler.GetReloadInputDown())
             {
                 Reload();
             }
             
-            if (_readyToShoot && _shooting && !_reloading && _bulletsLeft > 0)
+            if (_shooting)
             {
-                _bulletsShot = bulletsPerTap;
                 Shoot();
             }
         }
 
         public void Shoot()
         {
+            if(!_readyToShoot || _reloading || _bulletsLeft <= 0) return;
+            
             // Графика
-
             foreach (var flash in muzzleFlash)
             {
                 if (!_particleActivated)
@@ -136,6 +137,10 @@ namespace Assets.Scripts.Player
 
         public void Reload()
         {
+            
+            if(_bulletsLeft >= magazineSize || _reloading) return;
+            _bulletsShot = bulletsPerTap;
+            
             if (pressText)
             {
                 pressText.gameObject.SetActive(true);
