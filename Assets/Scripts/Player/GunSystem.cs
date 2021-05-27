@@ -9,6 +9,7 @@ namespace Assets.Scripts.Player
     public class GunSystem : MonoBehaviour
     {
         public PlayerInputHandler playerInputHandler;
+        public bool affectedByPlayer = true;
 
         public int damage = 20;
         public float timeBetweenShooting = .05f, spread = .02f, range = 100, reloadTime = 1, timeBetweenShots = 0;
@@ -27,6 +28,8 @@ namespace Assets.Scripts.Player
         public GameObject[] muzzleFlash;
         public Text text, pressText;
 
+        public int BulletsLEft => _bulletsLeft;
+        
         private void Awake()
         {
             _bulletsLeft = magazineSize;
@@ -36,15 +39,6 @@ namespace Assets.Scripts.Player
 
         private void Update()
         {
-            InputCheck();
-
-            if (text) text.text = (_bulletsLeft + " / " + magazineSize);
-        }
-
-        private void InputCheck()
-        {
-            _shooting = allowButtonHold ? playerInputHandler.GetFireInputHold() : playerInputHandler.GetFireInputDown();
-
             if (_bulletsLeft <= 0)
             {
                 foreach (var flash in muzzleFlash)
@@ -64,6 +58,15 @@ namespace Assets.Scripts.Player
                 _particleActivated = false;
             }
             
+            if(affectedByPlayer) InputCheck();
+
+            if (text) text.text = (_bulletsLeft + " / " + magazineSize);
+        }
+
+        private void InputCheck()
+        {
+            _shooting = allowButtonHold ? playerInputHandler.GetFireInputHold() : playerInputHandler.GetFireInputDown();
+
             if (playerInputHandler.GetReloadInputDown() && _bulletsLeft < magazineSize && !_reloading)
             {
                 Reload();
@@ -76,7 +79,7 @@ namespace Assets.Scripts.Player
             }
         }
 
-        private void Shoot()
+        public void Shoot()
         {
             // Графика
 
@@ -113,7 +116,7 @@ namespace Assets.Scripts.Player
             {
                 Debug.Log(rayHit.collider.name);
 
-                if (rayHit.collider.GetComponent<IDamagable>() != null)
+                if (rayHit.collider.GetComponent<IDamagable>() != null && !rayHit.collider.CompareTag(transform.tag))
                     rayHit.collider.GetComponent<IDamagable>().GetDamage(damage);
             }
 
@@ -131,9 +134,13 @@ namespace Assets.Scripts.Player
             _readyToShoot = true;
         }
 
-        private void Reload()
+        public void Reload()
         {
-            if (pressText) pressText.text = "Reloading...";
+            if (pressText)
+            {
+                pressText.gameObject.SetActive(true);
+                pressText.text = "Reloading...";
+            }
             _reloading = true;
             Invoke("ReloadFinished", reloadTime);
         }
