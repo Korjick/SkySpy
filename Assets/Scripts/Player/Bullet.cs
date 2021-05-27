@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player
     {
         public int bulletLifeTime = 10;
         public int damage = 10;
-    
+
         void Awake()
         {
             StartCoroutine(DestroyBullet());
@@ -17,14 +17,14 @@ namespace Assets.Scripts.Player
 
         void OnCollisionEnter(Collision collision)
         {
-            Debug.Log(collision.collider.name);
-        
+            Debug.Log("Bullet get " + collision.collider.name);
+
             if (collision.collider.GetComponent<IDamagable>() != null && !collision.collider.CompareTag(transform.tag))
-                collision.collider.GetComponent<IDamagable>().GetDamage(damage);
-        
+            collision.collider.GetComponent<IDamagable>().GetDamage(damage);
+
             Destroy(gameObject);
         }
-    
+
         private IEnumerator DestroyBullet()
         {
             yield return new WaitForSeconds(bulletLifeTime);

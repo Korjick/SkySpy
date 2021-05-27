@@ -9,8 +9,8 @@ public class EnemyController : MonoBehaviour
     public Transform[] dots;
     public Transform player;
     public SphereCollider sphereCollider;
-    public float destinationVariation = 5;
-    public float attackRange = 3;
+    public float destinationVariation = 3;
+    public float attackRange = 10;
 
     private NavMeshAgent _agent;
     private GunSystem _gunSystem;
@@ -36,7 +36,7 @@ public class EnemyController : MonoBehaviour
         ChaseNode chaseNode = new ChaseNode(player, _agent);
         IsInChaseDistanceNode isInChaseDistanceNode = new IsInChaseDistanceNode(player, sphereCollider, _agent);
 
-        AttackNode attackNode = new AttackNode(_gunSystem);
+        AttackNode attackNode = new AttackNode(_gunSystem, player, ownTransform);
         IsInAttackDistanceNode isInAttackDistanceNode =
             new IsInAttackDistanceNode(player, attackRange, ownTransform, _agent);
 
