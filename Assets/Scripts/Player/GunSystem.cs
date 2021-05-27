@@ -18,13 +18,12 @@ namespace Assets.Scripts.Player
 
         private int _bulletsLeft, _bulletsShot;
         private bool _shooting, _readyToShoot, _reloading, _particleActivated;
-        private Queue<GameObject> _bulletHoles;
 
-        public Camera mainCamera;
+        public Transform head;
         public Transform[] attackPoints;
-        public RaycastHit rayHit;
-
-        public GameObject bulletHoleGraphic;
+        public Bullet bullet;
+        public float bulletSpeed = 100;
+        
         public GameObject[] muzzleFlash;
         public Text text, pressText;
 
@@ -34,7 +33,6 @@ namespace Assets.Scripts.Player
         {
             _bulletsLeft = magazineSize;
             _readyToShoot = true;
-            _bulletHoles = new Queue<GameObject>();
             _bulletsShot = bulletsPerTap;
         }
 
@@ -92,33 +90,18 @@ namespace Assets.Scripts.Player
                 }
             }
             _particleActivated = true;
-            
-            if (_bulletHoles.Count < 10)
-            {
-                _bulletHoles.Enqueue(Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0)));
-                StartCoroutine(DestroyBulletHole());
-            }
-            else
-            {
-                var hole = _bulletHoles.Peek();
-                hole.transform.position = rayHit.point;
-                hole.transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-
             _readyToShoot = false;
 
             var x = Random.Range(-spread, spread);
             var y = Random.Range(-spread, spread);
 
-            var direction = mainCamera.transform.forward + new Vector3(x, y, 0);
+            var direction = head.transform.forward + new Vector3(x, y, 0);
 
-            //RayCast
-            if (Physics.Raycast(mainCamera.transform.position, direction, out rayHit, range))
+            // Bullet
+            foreach (var point in attackPoints)
             {
-                Debug.Log(rayHit.collider.name);
-
-                if (rayHit.collider.GetComponent<IDamagable>() != null && !rayHit.collider.CompareTag(transform.tag))
-                    rayHit.collider.GetComponent<IDamagable>().GetDamage(damage);
+                Bullet cur = Instantiate(bullet, point.position, Quaternion.Euler(0, 90, 0));
+                cur.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
             }
 
             _bulletsLeft--;
@@ -159,12 +142,6 @@ namespace Assets.Scripts.Player
                 pressText.gameObject.SetActive(false);
                 pressText.text = "Press R to reload";
             }
-        }
-
-        private IEnumerator DestroyBulletHole()
-        {
-            yield return new WaitForSeconds(bulletHoleLifeTime);
-            Destroy(_bulletHoles.Dequeue());
         }
     }
 }

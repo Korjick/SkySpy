@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 154300764}
   m_Layer: 5
   m_Name: Text (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 559364710}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 566656917}
   m_Layer: 5
   m_Name: Ammo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 813567317}
   m_Layer: 0
   m_Name: AimPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1003086765}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 1513123223}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 1545424443}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 1602201669}
   m_Layer: 5
   m_Name: Aim
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 1673162693}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputHandler: {fileID: 492151924060562967}
+  affectedByPlayer: 1
   damage: 20
   timeBetweenShooting: 0.05
   spread: 0.02
@@ -613,11 +614,12 @@ MonoBehaviour:
   bulletsPerTap: 2
   bulletHoleLifeTime: 3
   allowButtonHold: 1
-  mainCamera: {fileID: 492151923369994757}
+  head: {fileID: 492151923369994758}
   attackPoints:
   - {fileID: 2026736703}
   - {fileID: 813567317}
-  bulletHoleGraphic: {fileID: 100000, guid: 5a7989cc093e9fd45b43766b00610594, type: 3}
+  bullet: {fileID: 4444715702707978879, guid: 5a7989cc093e9fd45b43766b00610594, type: 3}
+  bulletSpeed: 100
   muzzleFlash:
   - {fileID: 2092975997072169505}
   - {fileID: 5235172229319421164}
@@ -636,7 +638,7 @@ GameObject:
   - component: {fileID: 1769804066}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +711,7 @@ GameObject:
   - component: {fileID: 1962427133}
   m_Layer: 5
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +748,7 @@ GameObject:
   - component: {fileID: 2026736703}
   m_Layer: 0
   m_Name: AimPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,7 +781,7 @@ GameObject:
   - component: {fileID: 492151923369994756}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -982,7 +984,7 @@ GameObject:
   - component: {fileID: 1565639726}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1213,6 +1215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachinePistol
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e2f4852e0b389746a89f6ff31b49486, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e2f4852e0b389746a89f6ff31b49486, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1286,6 +1292,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
       propertyPath: m_Name
       value: FX_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
       propertyPath: m_RootOrder
@@ -1401,6 +1411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachinePistol (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e2f4852e0b389746a89f6ff31b49486, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0e2f4852e0b389746a89f6ff31b49486, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1474,6 +1488,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
       propertyPath: m_Name
       value: FX_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4560e456c4ec0d3418fffd368dd1e7ff, type: 3}
       propertyPath: m_RootOrder
