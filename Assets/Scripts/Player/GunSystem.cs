@@ -101,6 +101,7 @@ namespace Assets.Scripts.Player
             foreach (var point in attackPoints)
             {
                 Bullet cur = Instantiate(bullet, point.position, Quaternion.Euler(0, 90, 0));
+                cur.tag = transform.tag;
                 cur.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
             }
 

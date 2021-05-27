@@ -13,7 +13,7 @@ public class Selector : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating "+GetType());
+        //Debug.Log("Evaluating "+GetType());
         // перебирает ноды, пока не найдет того, кто с SUCCESS или RUNNING
         foreach (var node in nodes)
         {

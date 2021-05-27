@@ -19,7 +19,7 @@ public class IsInChaseDistanceNode : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating " + GetType());
+        //Debug.Log("Evaluating " + GetType());
         if (_isChasing)
         {
             agent.isStopped = false;

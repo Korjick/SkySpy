@@ -9,7 +9,8 @@ namespace Assets.Scripts.Player
     {
         public int bulletLifeTime = 10;
         public int damage = 10;
-    
+        public string tag = "Player";
+        
         void Awake()
         {
             StartCoroutine(DestroyBullet());
@@ -19,8 +20,8 @@ namespace Assets.Scripts.Player
         {
             Debug.Log(collision.collider.name);
         
-            if (collision.collider.GetComponent<IDamagable>() != null && !collision.collider.CompareTag(transform.tag))
-                collision.collider.GetComponent<IDamagable>().GetDamage(damage);
+            if (collision.collider.gameObject.GetComponent<IDamagable>() != null && !collision.collider.transform.CompareTag(tag))
+                collision.collider.gameObject.GetComponent<IDamagable>().GetDamage(damage);
         
             Destroy(gameObject);
         }

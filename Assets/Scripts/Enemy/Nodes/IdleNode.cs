@@ -25,7 +25,7 @@ public class IdleNode : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating " + GetType());
+        //Debug.Log("Evaluating " + GetType());
         agent.isStopped = false;
         if (Vector3.Distance(transform.position, _destination) < variation)
         {

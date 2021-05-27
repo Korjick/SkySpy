@@ -16,7 +16,7 @@ public class ChaseNode : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating " + GetType());
+        //Debug.Log("Evaluating " + GetType());
         agent.destination = targetTransform.position;
         return NodeState.SUCCESS;
     }

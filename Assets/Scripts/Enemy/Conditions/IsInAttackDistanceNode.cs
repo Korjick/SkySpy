@@ -21,7 +21,7 @@ public class IsInAttackDistanceNode : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating " + GetType());
+        //Debug.Log("Evaluating " + GetType());
         if (Vector3.Distance(targetTransform.position, ownTransform.position) < attackRange)
         {
             agent.isStopped = true;

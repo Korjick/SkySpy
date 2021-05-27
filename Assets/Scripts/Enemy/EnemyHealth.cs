@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 
     public void GetDamage(int damage)
     {
+        Debug.Log("enemy get damage");
         _currentHealth -= damage;
         healthBarImage.fillAmount = _currentHealth / maxHealth;
 

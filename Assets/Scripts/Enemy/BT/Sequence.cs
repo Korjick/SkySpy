@@ -13,7 +13,7 @@ public class Sequence : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Evaluating "+GetType());
+        //Debug.Log("Evaluating "+GetType());
         // перебирает ноды пока кто-то не свалиться с FAILURE
         bool isAnyNodeRunning = false;
         foreach (var node in nodes)
