@@ -5,70 +5,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 8705302579489811402}
     m_Modifications:
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816786827331282273, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+    - target: {fileID: -8800149170198534275, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
       propertyPath: m_Name
-      value: SK_Character_BusinessMan_Shirt
+      value: Ball_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
---- !u!4 &2443907802822921246 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
-  m_PrefabInstance: {fileID: 1155477852234127813}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5272843646535204369
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2443907802822921246}
-    m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -113,9 +55,119 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4504369626594253086, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Hips
+      objectReference: {fileID: 0}
+    - target: {fileID: -1185714302947140735, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Ankle_L
+      objectReference: {fileID: 0}
+    - target: {fileID: -970436531481118979, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: UpperLeg_L
+      objectReference: {fileID: 0}
+    - target: {fileID: -740580608972136873, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Toes_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 883035055334631763, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: LowerLeg_L
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
       propertyPath: m_Name
       value: SK_Character_BusinessMan_Shirt
       objectReference: {fileID: 0}
+    - target: {fileID: 2201846939646455081, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: UpperLeg_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220239911951066596, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Spine_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366919953560279106, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Ball_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594830903767197167, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Ankle_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005289281799709730, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: LowerLeg_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146396624117814960, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+      propertyPath: m_Name
+      value: Toes_R
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6141f77efb219e40b8c28910ea0012f, type: 3}
+--- !u!1001 &5272843646535204369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2037038852291721559, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.539555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4162045
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.228004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816786827331282273, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+      propertyPath: m_Name
+      value: SK_Character_BusinessMan_Shirt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+--- !u!4 &8705302579489811402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3594881643110716891, guid: 9be8fcf0672d5c74b876c2d6adc8c715, type: 3}
+  m_PrefabInstance: {fileID: 5272843646535204369}
+  m_PrefabAsset: {fileID: 0}
