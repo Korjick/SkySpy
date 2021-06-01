@@ -12,7 +12,7 @@ namespace Assets.Scripts.Player
         public bool affectedByPlayer = true;
 
         public int damage = 20;
-        public float timeBetweenShooting = .05f, spread = .02f, range = 100, reloadTime = 1, timeBetweenShots = 0;
+        public float timeBetweenShooting = .05f, spread = .005f, range = 100, reloadTime = 1, timeBetweenShots = 0;
         public int magazineSize = 30, bulletsPerTap = 2, bulletHoleLifeTime = 3;
         public bool allowButtonHold = true;
 
@@ -95,8 +95,13 @@ namespace Assets.Scripts.Player
             var x = Random.Range(-spread, spread);
             var y = Random.Range(-spread, spread);
 
-            var direction = head.transform.forward + new Vector3(x, y, 0);
-
+            var direction = head.transform.forward;
+            if (Physics.Raycast(head.transform.position, head.transform.forward, out var rayHit, range))
+            {
+                direction = (rayHit.point - head.transform.position).normalized;
+            }
+            direction += new Vector3(x, y, 0);
+            
             // Bullet
             foreach (var point in attackPoints)
             {
