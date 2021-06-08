@@ -23,7 +23,7 @@ namespace Assets.Scripts.Player
         public Transform[] attackPoints;
         public Bullet bullet;
         public float bulletSpeed = 100;
-        
+
         public GameObject[] muzzleFlash;
         public Text text, pressText;
 
@@ -44,20 +44,22 @@ namespace Assets.Scripts.Player
                 {
                     flash.SetActive(false);
                 }
+
                 _particleActivated = false;
-                if(pressText) pressText.gameObject.SetActive(true);
+                if (pressText) pressText.gameObject.SetActive(true);
             }
-            
+
             if (!_shooting)
             {
                 foreach (var flash in muzzleFlash)
                 {
                     flash.SetActive(false);
                 }
+
                 _particleActivated = false;
             }
-            
-            if(affectedByPlayer) InputCheck();
+
+            if (affectedByPlayer) InputCheck();
 
             if (text) text.text = (_bulletsLeft + " / " + magazineSize);
         }
@@ -70,7 +72,7 @@ namespace Assets.Scripts.Player
             {
                 Reload();
             }
-            
+
             if (_shooting)
             {
                 Shoot();
@@ -79,8 +81,8 @@ namespace Assets.Scripts.Player
 
         public void Shoot()
         {
-            if(!_readyToShoot || _reloading || _bulletsLeft <= 0) return;
-            
+            if (!_readyToShoot || _reloading || _bulletsLeft <= 0) return;
+
             // Графика
             foreach (var flash in muzzleFlash)
             {
@@ -89,6 +91,7 @@ namespace Assets.Scripts.Player
                     flash.SetActive(true);
                 }
             }
+
             _particleActivated = true;
             _readyToShoot = false;
 
@@ -100,12 +103,14 @@ namespace Assets.Scripts.Player
             {
                 direction = (rayHit.point - head.transform.position).normalized;
             }
+
             direction += new Vector3(x, y, 0);
-            
+
             // Bullet
             foreach (var point in attackPoints)
             {
-                Bullet cur = Instantiate(bullet, point.position, Quaternion.Euler(0, 90, 0));
+                Bullet cur = Instantiate(bullet, point.position,
+                    Quaternion.FromToRotation(Vector3.forward, point.transform.forward));
                 cur.tag = transform.tag;
                 cur.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
             }
@@ -126,15 +131,15 @@ namespace Assets.Scripts.Player
 
         public void Reload()
         {
-            
-            if(_bulletsLeft >= magazineSize || _reloading) return;
+            if (_bulletsLeft >= magazineSize || _reloading) return;
             _bulletsShot = bulletsPerTap;
-            
+
             if (pressText)
             {
                 pressText.gameObject.SetActive(true);
                 pressText.text = "Reloading...";
             }
+
             _reloading = true;
             Invoke("ReloadFinished", reloadTime);
         }
