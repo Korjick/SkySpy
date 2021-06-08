@@ -41,9 +41,6 @@ namespace Assets.Scripts.Player
         [Tooltip("Multiplicator for the sprint speed (based on grounded speed)")]
         public float sprintSpeedModifier = 2f;
 
-        [Tooltip("Height at which the player dies instantly when falling off the map")]
-        public float killHeight = -50f;
-
         [Header("Rotation")] [Tooltip("Rotation speed for moving the camera")]
         public float rotationSpeed = 200f;
 
@@ -200,6 +197,7 @@ namespace Assets.Scripts.Player
                     if ((IsGrounded || (_wallRunComponent != null && _wallRunComponent.IsWallRunning())) &&
                         _inputHandler.GetJumpInputDown())
                     {
+                        _jumpOnAir = true;
                         if (SetCrouchingState(false, false))
                         {
                             if (IsGrounded)

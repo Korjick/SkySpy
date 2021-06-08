@@ -1158,8 +1158,7 @@ MonoBehaviour:
   maxSpeedCrouchedRatio: 0.5
   maxSpeedInAir: 10
   accelerationSpeedInAir: 25
-  sprintSpeedModifier: 2
-  killHeight: -50
+  sprintSpeedModifier: 1
   rotationSpeed: 200
   aimingRotationMultiplier: 0.4
   jumpForce: 9
@@ -1204,6 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthText: {fileID: 1003086765}
+  killHeight: -50
 --- !u!1001 &599688669880208192
 PrefabInstance:
   m_ObjectHideFlags: 0
