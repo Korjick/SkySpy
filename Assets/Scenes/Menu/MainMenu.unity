@@ -1459,6 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1341494798}
   map: {fileID: 1866023573}
+  demo: {fileID: 760591606}
 --- !u!1 &1327872231
 GameObject:
   m_ObjectHideFlags: 0
