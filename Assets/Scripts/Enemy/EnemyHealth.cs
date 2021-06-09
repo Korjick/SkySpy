@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
         if (_currentHealth <= 0)
         {
             Debug.Log("Die");
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

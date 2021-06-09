@@ -9,6 +9,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Default
     second: {fileID: 2100000, guid: 827039f65e3528e47ae47f84112ff99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: man_c2_low_man_c2_lowMat
+    second: {fileID: 2100000, guid: 827039f65e3528e47ae47f84112ff99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: man_c3_low_man_c3_lowMat
+    second: {fileID: 2100000, guid: 827039f65e3528e47ae47f84112ff99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: man_c_low_man_c_lowMat
+    second: {fileID: 2100000, guid: 827039f65e3528e47ae47f84112ff99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: man_o_low_man_o_lowMat
+    second: {fileID: 2100000, guid: 827039f65e3528e47ae47f84112ff99f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

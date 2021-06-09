@@ -16,6 +16,8 @@ public class MenuController : MonoBehaviour
     {
         if(menuController) Destroy(gameObject);
         menuController = this;
+        
+        SecretLevel();
     }
 
     public void ShowMap(bool show)
@@ -30,7 +32,7 @@ public class MenuController : MonoBehaviour
 
     public void SecretLevel()
     {
-        if (PlayerPrefs.HasKey("Demo"))
+        if (PlayerPrefs.HasKey("Demo") && PlayerPrefs.GetInt("Demo", 0) > 2)
         {
             demo.onClick.AddListener(() => SceneManager.LoadScene(2));
         }

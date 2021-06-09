@@ -40,6 +40,9 @@ namespace Assets.Scripts.Player
 
             if (_currentHealth <= 0 && !_dead)
             {
+                PlayerPrefs.SetInt("Demo", 0);
+                PlayerPrefs.Save();
+                
                 input.enabled = false;
                 controller.enabled = false;
                 gun.enabled = false;
